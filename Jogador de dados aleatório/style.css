@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+}
+
+.question{
+    background-color: green;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    justify-content: space-between;
+    height: 8%;
+}
+
+.question input{
+    text-align: center;
+    width: 40%;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: 500;
+    background: rgb(225, 223, 223);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 70%;
+}
+
+.question input::placeholder{
+    font-size: 20px;
+    font-weight: 500;
+    color: gray;
+    /* text-transform: capitalize; */
+}
+
+.button{
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+    text-align: center;
+    width: 100px;
+    height: 70%;
+    color: black;
+    background: rgb(225, 223, 223);
+    border-radius: 50px;
+    font-size: 25px;
+}
+
+.buttonlocal{
+    background-color: yellow;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    height: 8%;
+}
+
+.grafico{
+    background-color: blue;
+    height: 80%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    position: relative;
+}
+
+.barra{
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    padding: 0;
+    height: 0px;
+    width: 0px;
+    background-color: yellow;
+}
+
+.espaco{
+    background-color: blue;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    height: 4%;
+}
+
+#n{
+    margin-left: 100px;
+}
+
+#N{
+    margin-right: 100px;
+}

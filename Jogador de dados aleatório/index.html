@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="question">
+        <input id="n" type="text" placeholder="What is the number of times to roll 5 dices?">
+        <input id="N" type="text" placeholder="How many faces does the dice have?">
+    </div>
+    <div class="buttonlocal">
+      <button class="button">Run</button>
+    </div>
+    <div class="espaco">
+
+    </div>
+    <div class="grafico">
+    </div>
+    <script src="./script.js"></script>
+
+</body>
+
+
+
+<!-- </html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gerador de Barras Verticais</title>
+  <style>
+    /* Estilos para as barras verticais */
+    .barra {
+      display: inline-block;
+      width: 10px;
+      margin-right: 5px;
+      background-color: #007bff; /* Cor das barras */
+      vertical-align: bottom;
+    }
+
+    /* Estilos para o container das barras */
+    .grafico {
+      height: 150px;
+      white-space: nowrap;
+      font-family: Arial, sans-serif;
+      font-size: 12px;
+      overflow-x: auto;
+    }
+
+    /* Estilos para os números abaixo das barras */
+    .numero {
+      display: inline-block;
+      width: 10px;
+      text-align: center;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Gerador de Barras Verticais</h1>
+  <label for="numero">Digite o número de barras:</label>
+  <input type="number" id="numero" min="1" max="100" step="1">
+  <button onclick="gerarBarras()">Gerar</button>
+  <div id="grafico" class="grafico"></div>
+
+  <script>
+    function gerarBarras() {
+      const numero = document.getElementById('numero').value; // Obtém o valor do input
+      const grafico = document.getElementById('grafico');
+      grafico.innerHTML = ''; // Limpa o conteúdo do container das barras
+
+      for (let i = 0; i < 100; i++) {
+        const altura = Math.floor(Math.random() * 101); // Gera altura aleatória
+        const barra = document.createElement('div'); // Cria um elemento div para representar a barra
+        barra.className = 'barra'; // Aplica a classe CSS para a barra
+        barra.style.height = altura + 'px'; // Define a altura da barra
+        grafico.appendChild(barra); // Adiciona a barra ao container
+
+        const numero = document.createElement('div'); // Cria um elemento div para representar o número abaixo da barra
+        numero.className = 'numero'; // Aplica a classe CSS para o número
+        numero.textContent = i + 1; // Define o número a ser exibido
+        grafico.appendChild(numero); // Adiciona o número ao container
+      }
+    }
+  </script>
+</body>
+</html>
+
+ -->
+
