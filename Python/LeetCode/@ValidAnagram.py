@@ -29,7 +29,6 @@ def sortString(string):
   
     return sorted_string
 
-
 # Exemplo de uso
 input_string = "acbaaaccca"
 sorted_string = sortString(input_string)
@@ -48,6 +47,32 @@ class Solution:
             return True
     
         return False
+    
+
+# Second Solution
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        if (len(s) != len(t)):
+            return False
+
+        countS = {}
+        countT = {}
+
+        for i in range (len(s)):
+            countS[s[i]] = 1 + countS.get(s[i], 0)
+            countT[t[i]] = 1 + countT.get(t[i], 0)
+
+        for c in countS:
+            if countS[c] != countT.get(c, 0):
+                return False
+
+        return True
+    
+# third solution
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        return sorted(s) == sorted(t)
+
     
 solution = Solution ()
 
