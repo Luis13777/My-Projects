@@ -4,6 +4,9 @@
 
 # print(lista2)
 
+# from typing import List
+
+
 class Bixo:
     def __init__(self, nome, frase, idade):
         self.nome = nome
