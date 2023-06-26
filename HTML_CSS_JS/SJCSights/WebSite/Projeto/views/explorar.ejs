@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/explorar.css">
+  <link rel="stylesheet" href="/css/forms.css">
+  <link rel="stylesheet" href="/css/moreInfos.css">
+
+  <title>SJC Sights</title>
+  <link rel="icon" href="/image/icone.png">
+</head>
+
+<body>
+  <div class="editAll escondido">
+    <div class="editBallon">
+      <button class="Xedit" onclick="closeEditar()"></button>
+
+      <div class="escondido editInside">
+        <div class="form__group">
+          <input type="input" class="form__field" placeholder="Local" name="Local" id='Local' required />
+          <label for="Local" class="form__label">Insira o local que você gostaria de editar</label>
+        </div>
+      </div>
+
+      <button type="button" id='edit' onclick="AnalisarInputEditar()" class="edit escondido">Editar</button>
+    </div>
+  </div>
+
+
+  <div class="all escondido">
+
+    <div class="balao">
+      <button class="X" onclick="closeAdicionar()"></button>
+      <div class="tudo escondido">
+
+        <form class="forms">
+          <div class="tituloInput">
+            <input type="text" id="title" name="title" placeholder="Título" class="input" required>
+          </div>
+          <div class="descricaoCurtaELonga">
+
+            <textarea contenteditable="true" placeholder="Descrição Curta:" id="descricaoCurta" class="input"
+              name="descricaoCurta" required></textarea>
+
+            <textarea contenteditable="true" placeholder="Descrição Longa:" id="descricaoLonga" class="input"
+              name="descricaoLonga" required></textarea>
+
+          </div>
+
+          <div class="Idade">
+            <div class="label">Idade Recomendada</div>
+            <div class="idades">
+              <input type="number" id="idade1" name="idade1" placeholder="Mín" class="inputNumber" required>
+              <input type="number" id="idade2" name="idade2" placeholder="Máx" class="inputNumber" required>
+              <!-- <input type="number" id="avaliacao" name="avaliacao"  placeholder="Avaliação" class="inputNumber" required>  -->
+            </div>
+          </div>
+
+          <div class="PalavrasChaves">
+
+            <div class="esquerda">
+
+              <div class="restauranteWrap wrap">
+                <div class="checkbox-wrapper-8">
+                  <input type="checkbox" id="restauranteSwitch" class="tgl tgl-skewed">
+                  <label for="restauranteSwitch" data-tg-on="SIM" data-tg-off="NÃO" class="tgl-btn"></label>
+                </div>
+                <div class="TextSwitch">
+                  ALIMENTAÇÃO
+                </div>
+              </div>
+
+              <div class="familiaWrap wrap">
+                <div class="checkbox-wrapper-8">
+                  <input type="checkbox" id="familiaSwitch" class="tgl tgl-skewed">
+                  <label for="familiaSwitch" data-tg-on="SIM" data-tg-off="NÃO" class="tgl-btn"></label>
+                </div>
+                <div class="TextSwitch">
+                  FAMÍLIA
+                </div>
+              </div>
+
+              <div class="esporteWrap wrap">
+                <div class="checkbox-wrapper-8">
+                  <input type="checkbox" id="esporteSwitch" class="tgl tgl-skewed">
+                  <label for="esporteSwitch" data-tg-on="SIM" data-tg-off="NÃO" class="tgl-btn"></label>
+                </div>
+                <div class="TextSwitch">
+                  ESPORTE
+                </div>
+              </div>
+
+              <div class="turismoWrap wrap">
+                <div class="checkbox-wrapper-8">
+                  <input type="checkbox" id="turismoSwitch" class="tgl tgl-skewed">
+                  <label for="turismoSwitch" data-tg-on="SIM" data-tg-off="NÃO" class="tgl-btn"></label>
+                </div>
+                <div class="TextSwitch">
+                  TURISMO
+                </div>
+              </div>
+
+              <div class="cinemaWrap wrap">
+                <div class="checkbox-wrapper-8">
+                  <input type="checkbox" id="cinemaSwitch" class="tgl tgl-skewed">
+                  <label for="cinemaSwitch" data-tg-on="SIM" data-tg-off="NÃO" class="tgl-btn"></label>
+                </div>
+                <div class="TextSwitch">
+                  CINEMA
+                </div>
+              </div>
+
+            </div>
+
+            <div class="direita">
+
+              <div class="parqueWrap wrap">
+                <div class="checkbox-wrapper-8">
+                  <input type="checkbox" id="parqueSwitch" class="tgl tgl-skewed">
+                  <label for="parqueSwitch" data-tg-on="SIM" data-tg-off="NÃO" class="tgl-btn"></label>
+                </div>
+                <div class="TextSwitch">
+                  PARQUE
+                </div>
+              </div>
+
+              <div class="comprasWrap wrap">
+                <div class="checkbox-wrapper-8">
+                  <input type="checkbox" id="comprasSwitch" class="tgl tgl-skewed">
+                  <label for="comprasSwitch" data-tg-on="SIM" data-tg-off="NÃO" class="tgl-btn"></label>
+                </div>
+                <div class="TextSwitch">
+                  COMPRAS
+                </div>
+              </div>
+
+              <div class="hospedagemWrap wrap">
+                <div class="checkbox-wrapper-8">
+                  <input type="checkbox" id="hospedagemSwitch" class="tgl tgl-skewed">
+                  <label for="hospedagemSwitch" data-tg-on="SIM" data-tg-off="NÃO" class="tgl-btn"></label>
+                </div>
+                <div class="TextSwitch">
+                  HOSPEDAGEM
+                </div>
+              </div>
+
+              <div class="estacionamentoWrap wrap">
+                <div class="checkbox-wrapper-8">
+                  <input type="checkbox" id="estacionamentoSwitch" class="tgl tgl-skewed">
+                  <label for="estacionamentoSwitch" data-tg-on="SIM" data-tg-off="NÃO" class="tgl-btn"></label>
+                </div>
+                <div class="TextSwitch">
+                  ESTACIONAMENTO
+                </div>
+              </div>
+
+              <div class="festaWrap wrap">
+                <div class="checkbox-wrapper-8">
+                  <input type="checkbox" id="festaSwitch" class="tgl tgl-skewed">
+                  <label for="festaSwitch" data-tg-on="SIM" data-tg-off="NÃO" class="tgl-btn"></label>
+                </div>
+                <div class="TextSwitch">
+                  FESTA
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="EnderecoETelefone">
+            <input type="text" id="Endereco" name="Endereco" placeholder="Endereço" class="input small" required>
+            <input type="tel" id="Telefone" name="Telefone" placeholder="Telefone" class="input small" required>
+          </div>
+
+          <div class="Imagens">
+            <input type="text" id="Imagens" name="Imagens" placeholder="Imagens" class="input" required multiple>
+            <div class="help">?</div>
+          </div>
+
+          <div class="ButtonSpace">
+            <button type="button" id='submit' class="submit">Enviar</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+  <div class="allFiltro escondido">
+
+    <div class="balaoFiltro">
+      <button class="XFiltro" onclick="closeFiltro()"></button>
+      <div class="tudoFiltro escondido">
+
+        <form class="formsFiltro">
+
+          <div class="PalavrasChavesFiltro">
+
+            <div class="esquerdaFilter">
+
+              <div class="restauranteWrapFilter wrapFilter">
+                <div class="checkbox-wrapper-8">
+                  <input type="checkbox" id="restauranteSwitchFilter" class="tgl tgl-skewed" checked checked>
+                  <label for="restauranteSwitchFilter" data-tg-on="SIM" data-tg-off="NÃO" class="tgl-btn"></label>
+                </div>
+                <div class="TextSwitchFilter">
+                  ALIMENTAÇÃO
+                </div>
+              </div>
+
+              <div class="familiaWrapFilter wrapFilter">
+                <div class="checkbox-wrapper-8">
+                  <input type="checkbox" id="familiaSwitchFilter" class="tgl tgl-skewed" checked>
+                  <label for="familiaSwitchFilter" data-tg-on="SIM" data-tg-off="NÃO" class="tgl-btn"></label>
+                </div>
+                <div class="TextSwitchFilter">
+                  FAMÍLIA
+                </div>
+              </div>
+
+              <div class="esporteWrapFilter wrapFilter">
+                <div class="checkbox-wrapper-8">
+                  <input type="checkbox" id="esporteSwitchFilter" class="tgl tgl-skewed" checked>
+                  <label for="esporteSwitchFilter" data-tg-on="SIM" data-tg-off="NÃO" class="tgl-btn"></label>
+                </div>
+                <div class="TextSwitchFilter">
+                  ESPORTE
+                </div>
+              </div>
+
+              <div class="turismoWrapFilter wrapFilter">
+                <div class="checkbox-wrapper-8">
+                  <input type="checkbox" id="turismoSwitchFilter" class="tgl tgl-skewed" checked>
+                  <label for="turismoSwitchFilter" data-tg-on="SIM" data-tg-off="NÃO" class="tgl-btn"></label>
+                </div>
+                <div class="TextSwitchFilter">
+                  TURISMO
+                </div>
+              </div>
+
+              <div class="cinemaWrapFilter wrapFilter">
+                <div class="checkbox-wrapper-8">
+                  <input type="checkbox" id="cinemaSwitchFilter" class="tgl tgl-skewed" checked>
+                  <label for="cinemaSwitchFilter" data-tg-on="SIM" data-tg-off="NÃO" class="tgl-btn"></label>
+                </div>
+                <div class="TextSwitchFilter">
+                  CINEMA
+                </div>
+              </div>
+
+            </div>
+
+            <div class="direitaFilter">
+
+              <div class="parqueWrapFilter wrapFilter">
+                <div class="checkbox-wrapper-8">
+                  <input type="checkbox" id="parqueSwitchFilter" class="tgl tgl-skewed" checked>
+                  <label for="parqueSwitchFilter" data-tg-on="SIM" data-tg-off="NÃO" class="tgl-btn"></label>
+                </div>
+                <div class="TextSwitchFilter">
+                  PARQUE
+                </div>
+              </div>
+
+              <div class="comprasWrapFilter wrapFilter">
+                <div class="checkbox-wrapper-8">
+                  <input type="checkbox" id="comprasSwitchFilter" class="tgl tgl-skewed" checked>
+                  <label for="comprasSwitchFilter" data-tg-on="SIM" data-tg-off="NÃO" class="tgl-btn"></label>
+                </div>
+                <div class="TextSwitchFilter">
+                  COMPRAS
+                </div>
+              </div>
+
+              <div class="hospedagemWrapFilter wrapFilter">
+                <div class="checkbox-wrapper-8">
+                  <input type="checkbox" id="hospedagemSwitchFilter" class="tgl tgl-skewed" checked>
+                  <label for="hospedagemSwitchFilter" data-tg-on="SIM" data-tg-off="NÃO" class="tgl-btn"></label>
+                </div>
+                <div class="TextSwitchFilter">
+                  HOSPEDAGEM
+                </div>
+              </div>
+
+              <div class="estacionamentoWrapFilter wrapFilter">
+                <div class="checkbox-wrapper-8">
+                  <input type="checkbox" id="estacionamentoSwitchFilter" class="tgl tgl-skewed" checked>
+                  <label for="estacionamentoSwitchFilter" data-tg-on="SIM" data-tg-off="NÃO" class="tgl-btn"></label>
+                </div>
+                <div class="TextSwitchFilter">
+                  ESTACIONAMENTO
+                </div>
+              </div>
+
+              <div class="festaWrapFilter wrapFilter">
+                <div class="checkbox-wrapper-8">
+                  <input type="checkbox" id="festaSwitchFilter" class="tgl tgl-skewed" checked>
+                  <label for="festaSwitchFilter" data-tg-on="SIM" data-tg-off="NÃO" class="tgl-btn"></label>
+                </div>
+                <div class="TextSwitchFilter">
+                  FESTA
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+
+
+
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="navbar">
+    <button class="navbar-button menu" onclick="openMenu()">
+    </button>
+    <div class="container">
+      <a href="/">
+        <img class="navbar-img" src="/image/logoSBG.png" alt="">
+      </a>
+    </div>
+  </div>
+  <div id="barra-lateral">
+    <div class="button-container">
+      <button class="navbar-button menu" onclick="closeMenu()">
+      </button>
+    </div>
+    <div class="plus-container">
+      <div class="plus">Adicionar Local</div>
+      <button class="adicionar" onclick="abrirAdiconar()">
+        <div class="signal"></div>
+      </button>
+    </div>
+    <div class="edit-container">
+      <div class="editText">Editar Local</div>
+      <button class="adicionar" onclick="abrirEditar()">
+        <div class="signalEdit"></div>
+      </button>
+    </div>
+    <div class="edit-container">
+      <div class="plus">Filtrar Locais</div>
+      <button class="adicionar" onclick="abrirFiltro()">
+        <div class="signalFilter"></div>
+      </button>
+    </div>
+  </div>
+  <div class="main">
+
+    <div class="ballon1">
+      <!-- <div class="infosContainer">
+
+        <div class="describing">DCTA</div>
+
+        <div class="slidesContainer">
+
+          <div class="slidershow">
+            <div class="slides">
+              <input type="radio" name="r" id="r1" checked>
+              <input type="radio" name="r" id="r2">
+              <input type="radio" name="r" id="r3">
+              <div class="allSlides">
+                <div class="slide s1">
+                  <div class="imgSlide slide1"></div>
+                </div>
+                <div class="slide s2">
+                  <div class="imgSlide slide2"></div>
+                </div>
+                <div class="slide s3">
+                  <div class="imgSlide slide3"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navigation">
+          <label for="r1" class="bar"></label>
+          <label for="r2" class="bar"></label>
+          <label for="r3" class="bar"></label>
+        </div>
+      </div> -->
+
+      <!-- <div class="infosContainer">
+
+        <div class="describing">Descrição do Local</div>
+        <div class="detailsContainer">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam, et veniam. Sapiente, doloremque modi nemo minus
+          qui error ab amet, tenetur eligendi perferendis deleniti aspernatur nostrum, consectetur perspiciatis debitis.
+          Doloremque quasi quo libero ad? Cumque obcaecati autem porro, eligendi dolorum nesciunt, corporis rem
+          distinctio, fugit qui facilis quae perspiciatis mollitia vel. Et, at fuga. Nam quia possimus delectus
+          provident eius obcaecati tenetur natus ea odit nemo error, quas incidunt, cupiditate doloremque asperiores
+          exercitationem! <br>
+
+          Dolorum delectus ex doloribus sunt eveniet quae architecto iure, id soluta, necessitatibus nesciunt labore
+          quaerat. Eius, aliquid officiis voluptate nemo rem excepturi odit veniam possimus a autem?
+        </div>
+      </div>
+
+      <div class="infosContainer">
+
+        <div class="describing recudeFont">
+          <div class="telefoneIcon"></div>
+          Telefone
+        </div>
+        <div class="detailsContainer telefoneInfos">
+          (12) 40002-8922
+        </div>
+      </div>
+
+      <div class="infosContainer">
+
+        <div class="describing recudeFont">
+          <div class="enderecoIcon"></div>
+          Endereço
+        </div>
+        <div class="detailsContainer enderecoInfos">
+          Praça Marechal-do-Ar Eduardo Gomes, 50
+        </div>
+      </div>
+
+      <div class="infosContainer">
+
+        <div class="describing recudeFont">
+          Idade Recomendada: 1 - 20
+        </div>
+      </div>
+
+
+      <div class="iconsContent">
+        <div class="icon esporte marginIcon"></div>
+        <div class="icon restaurante marginIcon"></div>
+        <div class="icon familia marginIcon"></div>
+        <div class="icon turismo marginIcon"></div>
+        <div class="icon cinema marginIcon"></div>
+        <div class="icon parque marginIcon"></div>
+        <div class="icon compras marginIcon"></div>
+        <div class="icon hospedagem marginIcon"></div>
+        <div class="icon estacionamento marginIcon"></div>
+        <div class="icon festa marginIcon"></div>
+      </div>
+
+      <div class="deleteContainer">
+        <button class="delete">
+          <span class="deleteSpan">CONFIRMAR</span>
+          <img class="deleteSvg" src="/image/trash.png">
+        </button>
+      </div> -->
+
+    </div>
+    <div class="ballon2">
+      <!-- <div class="local">
+        <div class="imagem"></div>
+        <div class="content">
+          <div class="titulo">DCTA</div>
+          <div class="content-text">\Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum nostrum
+            deleniti odio!
+            Fugit, eaque reprehenderit explicabo itaque commodi quo hic ipsa magnam harum assumenda.
+            Molestias expedita
+            laborum quo omnis labore officia odio architecto illo cumque consectetur quia dicta eaque
+            debitis asperiores
+            ullam, mollitia at, facere dolor eligendi eveniet dolore, ea eius. Ipsa earum illum consectetur,
+            delectus officiis
+            dolorem labore eos quod ducimus expedita beatae esse? Expedita nostrum numquam iure tempore
+            alias quasi vero
+            voluptate rerum, culpa veritatis nihil cupiditate! Nihil sunt molestias pariatur consectetur,
+            perferendis
+            voluptates quaerat inventore repellendus omnis? Vitae alias consectetur voluptas optio placeat
+            soluta porro id
+            suscipit.</div>
+          <div class="infos">
+            <div class="keywords">
+              <div class="icon esporte"></div>
+              <div class="icon restaurante"></div>
+              <div class="icon familia"></div>
+              <div class="icon turismo"></div>
+              <div class="icon cinema"></div>
+              <div class="icon parque"></div>
+            </div>
+            <div class="buttons">
+              <button onclick="openBallon()" class="button-explore">
+                <span>Explore</span>
+              </button>
+
+
+
+
+
+
+            </div>
+            <div class="rating">
+              <div class="estrela"></div>
+              <div class="ratingValue">5.0</div>
+            </div>
+
+          </div>
+
+        </div>
+      </div> -->
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
+  <script src="/js/scriptExplorar.js"></script>
+  <script src="/js/carregarDados.js"></script>
+  <script src="/js/scriptAdicionar.js"></script>
+  <script src="/js/adicionarDados.js"></script>
+  <script src="/js/editarDados.js"></script>
+  <script src="/js/scriptEditarDados.js"></script>
+  <script src="/js/balao1.js"></script>
+  <script src="/js/delete.js"></script>
+  <script src="/js/filtro.js"></script>
+</body>
+
+
+</html>

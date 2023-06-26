@@ -1,0 +1,288 @@
+.slidesContainer {
+    position: relative;
+    top: 0;
+    width: 95%;
+    aspect-ratio: 16/9;
+    margin-bottom: 2.5%;
+    flex-shrink: 0;
+}
+
+.slidershow {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+
+.navigation {
+    width: 30%;
+    height: 3%;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+}
+
+.bar {
+    width: 30%;
+    height: 100%;
+    border: 3px solid #fff;
+    cursor: pointer;
+}
+
+.bar:hover {
+    background-color: #fff;
+}
+
+/* input[name='r'] {
+    position: absolute;
+    visibility: hidden;
+} */
+
+.slides {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+/* .slide {
+
+    width: 33.333%;
+} */
+
+.imgSlide {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+}
+
+.slide1 {
+    background-image: url("/image/dcta1.jpg");
+}
+
+.slide2 {
+    background-image: url("/image/dcta2.jpg");
+}
+
+.slide3 {
+    background-image: url("/image/dcta3.jpeg");
+}
+
+#r1:checked~.allSlides {
+    left: 0;
+}
+
+#r2:checked~.allSlides {
+    left: -100%;
+}
+
+#r3:checked~.allSlides {
+    left: -200%;
+}
+
+.allSlides {
+    position: relative;
+    display: flex;
+    width: 300%;
+    height: 100%;
+    position: absolute;
+    flex-direction: row;
+    transition: 0.6s;
+}
+
+
+.detailsContainer {
+    flex-shrink: 0;
+    background-color: #fff;
+    width: 95%;
+    border-radius: 20px;
+    line-height: 1.1;
+    text-align: justify;
+    overflow: auto;
+    font-size: 1vw;
+    /* font-weight: 750; */
+    padding: 6%;
+    margin-bottom: 2.5%;
+    text-indent: 40px;
+}
+
+
+
+.describing{
+    display: flex;
+    flex-shrink: 0;
+    background-color: #fff;
+    width: 95%;
+    height: 7vh;
+    margin: 2.5% 0;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 200%;
+    font-weight: 1000;
+    padding: 1% 0;
+}
+
+.infosContainer{
+    position: relative;
+    border-radius: 30px;
+    margin: 2.5% 0;
+    width: 95%;
+    background-color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    flex-shrink: 0;
+    /* Impede o achatamento das divs */
+}
+
+.telefoneInfos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-indent: 0px;
+    font-size: 1vw;
+    font-weight: 1000;
+    padding: 1ch 3ch;
+}
+
+.telefoneIcon{
+    position: absolute;
+    height: 4vh;
+    transform: translate(5ch, 0);
+    aspect-ratio: 1/1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("/image/telefone.png");
+}
+
+.enderecoIcon{
+    position: absolute;
+    height: 4vh;
+    transform: translate(5ch, 0);
+    aspect-ratio: 1/1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url("/image/endereco.png");
+}
+
+.enderecoInfos{
+    padding: 1ch 3ch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-indent: 0px;
+    font-size: 0.75vw;
+    font-weight: 700;
+}
+
+.recudeFont{
+    font-size: 1.5vw;
+}
+
+.idadeInfos{
+    padding: 1ch 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-indent: 0px;
+    font-size: 1vw;
+    font-weight: 700;
+}
+
+.iconsContent{
+    position: relative;
+    height: 3vh;
+    width: 95%;
+    margin: 2.5% 0;
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.marginIcon{
+    overflow: hidden;
+    margin: 0 1%;
+}
+
+.delete {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    border: 2px solid rgb(231, 50, 50);
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 10px #333;
+    overflow: hidden;
+    transition: .3s;
+
+}
+
+.delete:hover {
+    background-color: rgb(245, 207, 207);
+    transform: scale(1.2);
+    box-shadow: 0 0 4px #111;
+    transition: .3s;
+}
+
+.deleteSvg {
+    color: rgb(231, 50, 50);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: .3s;
+    height: 70%;
+    width: 70%;
+
+}
+
+
+.delete:focus .deleteSvg {
+    opacity: 0;
+    transition: .3s;
+}
+
+.deleteSpan {
+    width: 150px;
+    position: absolute;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    color: rgb(231, 50, 50);
+    font-weight: 600;
+    transition: .3s;
+}
+
+.delete:focus {
+    width: 150px;
+    height: 50px;
+    transition: .3s;
+}
+
+
+.delete:focus .deleteSpan {
+    opacity: 1;
+    transition: .3s;
+}
+
+.deleteContainer{
+    margin-bottom: 2.5%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+
+}
