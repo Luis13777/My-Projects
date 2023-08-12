@@ -1,0 +1,3 @@
+DFS (Depth-First Search): to do a DFS, you can use a recursive algorithm. You can call your function for the root and then call the function to each kid.
+
+BFS (Breadth-First Search): to do a BFS, you need a queue. First store the root in the queue and start a vhile(queue). Then, pop each element in the queue and append it's kids in the queue
