@@ -1,3 +1,15 @@
 DFS (Depth-First Search): to do a DFS, you can use a recursive algorithm. You can call your function for the root and then call the function to each kid.
 
 BFS (Breadth-First Search): to do a BFS, you need a queue. First store the root in the queue and start a vhile(queue). Then, pop each element in the queue and append it's kids in the queue
+
+tuple: is like a list(array), but you can't change
+
+dictionary: dictionary = {"apple": "red", "orange": "orange", "banana": "yellow"}
+
+set(): dictionary with only keys
+
+heap in python: import heapq, heapq.heapify(HEAP), heapq.heappop(HEAP), heapq.heappush(HEAP, val)
+
+queue in python: queue = deque(), queue.append(num), queue.popleft(), queue.pop()
+
+stack: you can use just a list (Array)
