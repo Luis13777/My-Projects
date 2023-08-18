@@ -1,11 +1,5 @@
-from collections import deque
+array = [1, 2, 3]
 
-queue = deque()
-queue.append(1)
-queue.append(2)
-queue.append(3)
-
-print(queue)
-print(queue.popleft())
-print(queue.pop())
-print(queue)
+print(array)
+array.pop(0)
+print(array)
