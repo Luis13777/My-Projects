@@ -1,5 +1,8 @@
-array = [1, 2, 3]
+def contaCaracter (string):
+    cont = 0
+    for c in string:
+        cont += 1
 
-print(array)
-array.pop(0)
-print(array)
+    return cont
+
+
