@@ -1,8 +1,8 @@
-def contaCaracter (string):
-    cont = 0
-    for c in string:
-        cont += 1
+n = 5
 
-    return cont
+matrixAux = [[0]*n for i in range(n)]
 
 
+matrixAux[0][0] = 5
+
+print(matrixAux)
