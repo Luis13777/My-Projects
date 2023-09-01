@@ -1,8 +1,6 @@
-n = 5
+array = [1,2,3,4,5,6]
 
-matrixAux = [[0]*n for i in range(n)]
+print(array[:3:])
+print(array[3::])
 
-
-matrixAux[0][0] = 5
-
-print(matrixAux)
+print(array[:3:] + array[3::])

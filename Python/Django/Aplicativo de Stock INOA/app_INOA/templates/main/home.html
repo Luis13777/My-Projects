@@ -1,0 +1,42 @@
+{% extends 'main/base.html' %}
+{% block conteudo %}
+
+<form method="post" style="width: 100%; margin: 10px 0; display: flex; align-items: center; justify-content: center;" action="{% url 'imprimir_dados' %}">
+    {% csrf_token %}
+
+    <div style="margin-top: 10px; width: 100%;" class="d-flex justify-content-center align-items-center">
+        <div style="width: 40%;">
+            <div style="text-align: center; padding-bottom: 10px;">
+                Qual ativo você deseja analisar?
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <!-- <span class="input-group-text" id="inputGroup-sizing-sm">Ativo:</span> -->
+                <input name="imprimir_input" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                <button style="border: none;" class="form-control-sm">Analisar</button>
+            </div>
+            
+        </div>
+    </div>
+</form>
+
+{% if imagem_grafico %}
+    <div class="img-container">
+        <img src="data:image/png;base64,{{ imagem_grafico|safe }}" alt="Gráfico de Preço">
+    </div>
+{% endif %}
+
+
+<style>
+    .img-container {
+    width: 80%;
+    margin: 0 auto; /* Centraliza horizontalmente */
+    overflow: hidden; /* Evita que a imagem ultrapasse a largura definida */
+}
+
+.img-container img {
+    width: 100%; /* Faz a imagem ocupar toda a largura da div pai */
+    height: auto; /* Mantém a proporção da imagem */
+}
+</style>
+
+{% endblock %}

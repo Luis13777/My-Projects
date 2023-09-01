@@ -1,0 +1,102 @@
+{% extends 'main/base.html' %}
+{% block conteudo %}
+
+<form style="width: 100%; margin: 10px 0; display: flex; align-items: center; justify-content: center;" action="{% url 'ativar_rastreador' %}">
+    <button style="border: none; font-weight: 500; margin: 0 5px; background-color: rgb(212, 255, 241);" class="form-control-sm">Ativar rastreador</button> 
+</form>
+
+<form style="width: 100%; margin: 10px 0; display: flex; align-items: center; justify-content: center;" action="{% url 'desativar_rastreador' %}">
+    <button style="border: none; font-weight: 500; margin: 0 5px; background-color: rgb(236, 173, 173);" class="form-control-sm">Desativar rastreador</button> 
+</form>
+
+<form method="post" action="{% url 'alterar_email' %}">
+    {% csrf_token %}
+    <div style="margin-top: 10px;" class="d-flex justify-content-center align-items-center">
+        <div style="width: 40%;">
+            <div style="text-align: center; padding-bottom: 10px;">
+                Email de avisos
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <input placeholder="{{Email.email}}" name="input_email" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
+                <button style="border: none;" class="form-control-sm">Salvar</button>
+            </div>
+        </div>
+    </div>
+</form>
+    
+
+
+
+<form action="{% url 'adicionar_ativo' %}" method="post">
+    {% csrf_token %}
+    <div style="margin-top: 10px;" class="d-flex justify-content-center align-items-center">
+        <div style="width: 40%;">
+            <div style="text-align: center; padding-bottom: 10px;">
+                Adicionar Ativo
+            </div>
+            <div class="input-group input-group-sm mb-3">
+                <input type="text" name="nome_ativo" class="form-control" placeholder="ex: MSFT">
+                <button type="submit" style="border: none;" class="form-control-sm">Adicionar</button>
+            </div>
+            
+        </div>
+    </div>
+</form>
+
+<div style="text-align: center; width: 100%; font-size: 30px; font-weight: 500; margin-top: 30px;">
+    Meus Ativos
+</div>
+
+{% for ativo in Ativos %}
+<div style="margin-top: 10px;" class="d-flex justify-content-center align-items-center">
+    <div style="width: 40%; margin: 10px 0; border-top: 1px solid rgb(209, 209, 209)" class="text-center">
+        <div style="text-align: center; padding-bottom: 10px;">
+            {{ativo.nome}}
+        </div>
+        <form id="form-ativo-{{ ativo.id_ativo }}" method="post" action="{% url 'atualizar_ativo' ativo.id_ativo %}">
+        <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;" class="d-flex justify-content-center">
+            {% csrf_token %}
+            <div style="width: 100%; display: flex; justify-content: center; align-items: center; margin: 5px 0;">
+                Tempo de checagem em minutos:
+            <input style="width: 15%; margin: 0 10px;" name="delay" class="form-control" placeholder="{{ativo.delay}}" aria-label="Sizing example input"  type="text"> 
+            </div>
+
+            <div style="display: flex; justify-content: center; align-items: center;" class="d-flex justify-content-center">
+
+                
+                Limite inferior
+                <input style="width: 15%; margin: 0 10px;" name="limite_inferior" class="form-control" placeholder="{{ativo.limite_inferior}}" aria-label="Sizing example input"  type="text"> 
+                <input style="width: 15%; margin: 0 10px;" name="limite_superior" class="form-control" placeholder="{{ativo.limite_superior}}" aria-label="Sizing example input"  type="text"> 
+                Limite superior
+            </div>
+        </div>
+    </form>
+        <div style="display: flex; align-items: center; justify-content: center; margin-top: 10px;">
+            <form method="post" action="{% url 'excluir_ativo' ativo.id_ativo %}">
+                {% csrf_token %}
+                <button style="border: none; margin: 0 4px;" class="form-control-sm">Deletar Ativo</button>
+            </form>
+            <button onclick="submitForm({{ativo.id_ativo}})" style="border: none; margin: 0 17px;" class="form-control-sm">Salvar Ativo</button>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- <div style="text-align: center; width: 100%;">
+ {{ativo.datas}}
+</div> -->
+
+{% endfor %}
+
+
+<script>
+    function submitForm(ativoId) {
+        var form = document.getElementById("form-ativo-" + ativoId);
+        form.submit();
+    }
+</script>
+
+
+
+{% endblock %}
