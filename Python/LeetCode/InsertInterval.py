@@ -66,8 +66,5 @@ class Solution:
 
         return intervals
     
-# print(Solution().insert([[1,2], [3,4], [5,6], [9,10], [11,15]], [7,8]))
-# print(Solution().insert([[1,2], [3,4], [5,6], [9,10], [11,15]], [6,8]))
-# print(Solution().insert([[1,2], [3,4], [5,6], [9,10], [11,15]], [7,9]))
-# print(Solution().insert([[1,2], [3,4], [5,6], [9,10], [11,15]], [6,9]))
+
 print(Solution().insert([[1,5],[9,12]], [0,4]))
