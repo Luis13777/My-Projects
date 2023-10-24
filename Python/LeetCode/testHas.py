@@ -1,3 +1,1 @@
-dicionario = {"chave1": "valor1", "chave2": "valor2"}
-
-print(dicionario)
+print([0 for i in range(4)])
