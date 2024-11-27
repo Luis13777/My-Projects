@@ -1,0 +1,5 @@
+# Ignorar todos os diretórios __pycache__ em qualquer lugar do projeto
+**/__pycache__/
+
+# Ignorar o arquivo .env dentro da pasta Exame
+Exame/.env
